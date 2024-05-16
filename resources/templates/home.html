@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="banner d-flex justify-content-center align-items-center">
+
+			<div class="text-center">
+				<h1 class="font-weight-bold">Recipe Management System</h1>
+				<p>A recipe is a set of instructions and a list of ingredients
+					for making a food, drink, or dish. Recipes can be simple or
+					complex, depending on the user and the operation's needs. For
+					example, a beginner cook might need more information than an
+					experienced chef.</p>
+
+				<button class="btn bg-primary btn-lg text-center">Get Start</button>
+			</div>
+
+		</div>
+
+
+
+		<div class="container text-center mt-5 ">
+
+			<h2>Food Items</h2>
+
+			<div class="row mt-3  justify-content-center align-content-center">
+
+				<div class="col-md-4">
+
+					<div class="card" style="width: 100%; height: 25rem;">
+						<img src="img/mexican.jpg" class="card-img-top" alt="..."
+							style="height: 160px;">
+						<div class="card-body">
+							<p class="card-text">Mexican street food can include tacos,
+								quesadillas, pambazos, tamales, huaraches, alambres, al pastor,
+								and food not suitable to cook at home, including barbacoa,
+								carnitas, and since many homes in Mexico do not make use of
+								ovens, roasted chicken.</p>
+
+							<a class="btn btn-warning">View More</a>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-4">
+
+					<div class="card" style="width: 100%; height: 25rem;">
+						<img src="img/italian.webp" class="card-img-top" alt="..."
+							style="height: 160px;">
+						<div class="card-body">
+							<p class="card-text">The Mediterranean diet forms the basis
+								of Italian cuisine, rich in pasta, fish, fruits and vegetables.
+								Cheese, cold cuts and wine are central to Italian cuisine, and
+								along with pizza and coffee (especially espresso) form part of
+								Italian gastronomic culture.</p>
+
+							<a class="btn btn-warning">View More</a>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-4">
+
+					<div class="card" style="width: 100%; height: 25rem;">
+						<img src="img/chinese.jpg" class="card-img-top" alt="..."
+							style="height: 160px;">
+						<div class="card-body">
+							<p class="card-text">Chinese cuisine is one of the world's
+								oldest and most diverse cuisines, comprising foods originating
+								from China. Chinese meals include four main food groups —
+								fruits, vegetables, grains and meat. These dishes don't contain
+								large amounts of dairy.</p>
+
+							<a class="btn btn-warning">View More</a>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="container text-center mt-5 ">
+
+			<h2>Food Types</h2>
+
+			<div
+				class="row mt-3  mb-5 justify-content-center align-content-center">
+
+				<div class="col-md-6">
+					<img src="img/veg.webp" class="card-img-top" alt="..."
+						style="height: 100%; width: 100%;">
+				</div>
+
+				<div class="col-md-6 mt-5">
+					<p>Vegetarian cuisine is based on food that meets vegetarian
+						standards by not including meat and animal tissue products (such
+						as gelatin or animal-derived rennet). A variety of vegetarian food
+						ingredients that are also vegan.To get the most out of a
+						vegetarian diet, choose a variety of healthy plant-based foods.
+						These include whole fruits and vegetables and whole grains. Nuts
+						and legumes, such as lentils, beans and peanuts, also are
+						considered healthy plant-based foods. At the same time, cut back
+						on less healthy choices.</p>
+				</div>
+
+			</div>
+
+			<div
+				class="row mt-3  mb-5 justify-content-center align-content-center">
+
+				<div class="col-md-6 mt-5">
+					<p>Non-vegetarian food (in Indian English sometimes shortened
+						to non-veg food) contains meat (red meat, poultry, seafood, or the
+						flesh of any other animal), and sometimes, eggs. The term is
+						common in India, but not usual elsewhere.Protein-rich non-veg
+						foods can promote a feeling of fullness and satisfaction, helping
+						to control hunger and manage weight. Including lean cuts of meat,
+						fish, and poultry in a balanced diet can contribute to weight
+						management goals by reducing overall calorie intake and supporting
+						a healthy metabolism.</p>
+				</div>
+
+				<div class="col-md-6">
+					<img src="img/nonveg.jpg" class="card-img-top" alt="..."
+						style="height: 100%; width: 100%;">
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="container mt-5 fst-italic text-center mt-5 mb-5">
+
+			<h2>Get in Touch</h2>
+
+			<div class="row justify-content-center mt-5">
+
+				<div class="col-sm-5">
+
+					<div class="container">
+
+						<i class="fa-solid fa-house fa-lg" style="color: #ff5900;"></i>
+						<h5>xyz Road ,ABC Building</h5>
+						<p class="fw-lighter">Dhenkanal,Odisha</p>
+						<i class="fa-solid fa-phone fa-lg" style="color: #ff5900;"></i>
+						<h5>+91 98564-63214</h5>
+						<p class="fw-lighter">Monday to Saturday, 10AM to 6PM</p>
+						<i class="fa-solid fa-envelope fa-lg" style="color: #ff5900;"></i>
+						<h5>helloome@learn.com</h5>
+						<p class="fw-light">Email us your query</p>
+
+
+
+					</div>
+
+				</div>
+
+				<div class="col-sm-5">
+
+
+					<form id="frm" action="#">
+
+						<input type="text" id="fn"
+							class="form-control input-transparent mt-2"
+							placeholder="Enter your Name .."
+							style="border: 1px solid #ff5900;"> <span id="sp1"></span>
+						<input type="text" id="cn"
+							class="form-control input-transparent mt-2" maxlength="10"
+							placeholder="Enter your contact Number .."
+							style="border: 1px solid #ff5900;"> <span id="sp3"></span>
+						<input type="email" id="eid"
+							class="form-control input-transparent mt-2"
+							placeholder="Enter your Email id .."
+							style="border: 1px solid #ff5900;"> <span id="sp4"></span>
+
+						<textarea id="sub" cols="25" rows="5"
+							class="form-control input-transparent mt-2"
+							placeholder="Enter your Subject .."
+							style="border: 1px solid #ff5900;"></textarea>
+
+
+						<button type="submit" id="submit" class="btn btn-warning mt-3">Submit</button>
+
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="card mr-1 ml-3">
+
+
+			<div class="card-body">
+
+				<h3 class="text-center text-secondary fst-italic fw-lighter">Your
+					Recipes</h3>
+
+
+				<div class="container mb-3">
+
+					<div class="row justify-content-center">
+
+
+						<div th:each="r : ${recipeList}" class="col-lg-10 col-md-12 mt-2">
+
+
+							<div class="card mb-3" style="height:305px;">
+								<div class="row g-0">
+									<div class="col-md-4">
+										<img th:src="@{'/img/'+${r.image} }"
+											class="img-fluid rounded-start" alt="Card image cap"
+											style="width: 100%; height: 305px;">
+									</div>
+									<div class="col-md-8">
+										<div class="card-body">
+											<h5 class="card-title">[[${r.name}]]</h5>
+											<p class="card-text">[[${r.ingredients}]]</p>
+											<p class="card-text">
+											<div class="card-footer text-center">
+												<a href="#" th:href="@{'/user/'+${r.rid}+'/recipe'}"
+													class="btn btn-warning btn-sm ">Read more...</a>
+											</div>
+											</p>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<script>
+		
+		$(document).ready(() => {
+			
+			$(".item").removeClass("active");
+			
+			$("#your-recipe").addClass("active");
+			
+			} );
+		
+		</script>
+
+	</section>
+
+</body>
+</html>

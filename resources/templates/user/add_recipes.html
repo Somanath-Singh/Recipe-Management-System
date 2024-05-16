@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+
+		<div class="card mr-3 ml-3">
+
+			<div class="card-body">
+
+				<h3 class="text-center text-secondary fst-italic fw-lighter">Add
+					Recipes</h3>
+
+				<div class="container m-1">
+
+					<div class="row justify-content-center">
+
+						<div class="col-md-8">
+
+
+							<form th:object="${recipe}" enctype="multipart/form-data"
+								method="POST" th:action="@{/user/process-recipes}" class="m-2">
+								
+								<div class="input-group mt-2">
+									<input type="text" name="name"
+										placeholder="Enter Recipe Name  ." class="form-control"
+										required>
+								</div>
+
+								<div class="input-group mt-2">
+									<select class="form-control" name="categories">
+
+										<option selected disabled>-----Select Category-----</option>
+										<option>Breakfast recipes</option>
+										<option>Lunch recipes</option>
+										<option>Dinner recipes</option>
+										<option>Salad recipes</option>
+										<option>Main-course recipes</option>
+										<option>Side-dish recipes</option>
+
+									</select>
+								</div>
+
+								<div class="input-group mt-2">
+									<input type="text" name="ingredients"
+										placeholder="Enter Ingredients of recipes  ." class="form-control"
+										required>
+								</div>
+
+								<div class="input-group mt-2">
+									<select class="form-control" name="serving">
+
+										<option selected disabled>-----Select Serving-----</option>
+										<option>1 to  3 people</option>
+										<option>3 to  5 people</option>
+										<option>5 to  7 people</option>
+										<option>7 to  10 people</option>
+
+									</select>
+								</div>
+								
+								<div class="input-group mt-2">
+									<input type="text" name="time"
+										placeholder="Enter time required to prepared   ." class="form-control"
+										required>
+								</div>
+
+								<div class="input-group mt-2">
+									<textarea rows="5" name="description"
+										placeholder="Enter procedure to make it   ."
+										class="form-control" required></textarea>
+								</div>
+
+								<div class="input-group mt-2 mb-3">
+									<label class="input-group-text" for="upload">Upload</label> <input
+										type="file" class="form-control hover-b" name="imageName" id="upload">
+								</div>
+
+								
+
+									<div class="container text-center">
+										<button type="submit" class="btn btn-outline-primary hero_btn">Add</button>
+									</div>
+
+
+
+
+								<!-- <th:block th:if="${user.adminVerify} != Verified">
+
+									<div class="container text-center">
+
+										<h3 style="color: red;">you are not verified by admin
+											so you can't add post</h3>
+
+									</div>
+
+								</th:block> -->
+
+
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<script>
+		
+		$(document).ready(() => {
+			
+			$(".item").removeClass("active");
+			
+			$("#add-recipe").addClass("active");
+			
+			} );
+		
+		</script>
+
+	</section>
+
+</body>
+</html>

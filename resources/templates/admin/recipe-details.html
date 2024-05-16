@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="container">
+
+			<div class="row justify-content-center my-4">
+
+				<div class="col-lg-10 col-12">
+
+					<div class="card  main-content" th:if="${recipe}">
+
+						<div class="card-header primary-background text-white">
+
+							<h4 class="text-primary">[[${recipe.name}]]</h4>
+
+						</div>
+
+
+						<div class="card-body">
+
+							<img th:src="@{'/img/'+${recipe.image} }"
+								class="card-img-top my-2" alt="Card image cap"
+								style="width: 100%; height: 18rem;">
+
+							<div class="row my-3 row-user">
+
+								<div class=col-md-8>
+
+									<p>
+										<a class="text-primary" href="#!" th:text="${name}"> </a>&nbsp;&nbsp;has
+										posted :
+									</p>
+
+								</div>
+
+							</div>
+
+							<h4>TYPE</h4>
+							<p class="post-content">[[${recipe.categories}]]</p>
+
+							<h4>SERVING</h4>
+							<p class="post-content">[[${recipe.serving}]]</p>
+
+							<h4>TIME REQUIRED TO PREPARE</h4>
+							<p class="post-content">[[${recipe.time}]]</p>
+
+							<h4>INGREDIENTS</h4>
+							<p class="post-content">[[${recipe.ingredients}]]</p>
+							<br>
+							<h4>PROCEDURE TO PREPARE</h4>
+							<div class="post-code">
+
+								<p>[[${recipe.description}]]</p>
+
+							</div>
+
+						</div>
+
+
+						<div class="card-footer">
+
+							<div class="container">
+
+								<div class="row">
+								
+									<div class="col-lg-12" th:each="c:${comments}">
+									
+									<div class="row">
+								
+									<div class="col-lg-11" >
+									
+									<p class="text-primary">
+											<b class="text-danger"><i
+												class="fa-solid fa-comments fa-lg" style="color: #ff0000;"></i>&nbsp;&nbsp;&nbsp;</b>
+											<code>[[${c.comment}]]</code>
+										</p>
+										
+										<p class="post-date text-success" style="text-align: right;">[[${c.date}]]</p>
+									
+									</div>
+									
+									<div class="col-lg-1 text-center" >
+									
+									<i class="fa-solid fa-star fa-2xl" style="color: #841fff;"></i>
+									<h1>[[${c.ratings}]]</h1>
+									
+									</div>
+									
+									</div>
+									
+										<hr>
+										
+									</div>
+									
+								</div>
+
+
+							</div>
+
+							<hr>
+
+						</div>
+
+
+
+					</div>
+
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<h1 class="text-center p-3 text-danger " th:unless="${recipe}">You
+			don't have permission to see this posts . . .</h1>
+
+
+
+
+	</section>
+
+</body>
+</html>
